@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// Queue ============================
+function Queue() {
+	const queue = [];
+
+    function isEmpty() {
+        return queue.length === 0
+    }
+
+    function peek() {
+        if (queue.length === 0) {
+            return null
+        }
+        return queue[0]
+    }
+
+	function add(data) {
+        queue.push(data)
+    }
+    
+    function remove() {
+        return queue.length !== 0 ? queue.shift(queue[0]) : null;
+    }
+    
+    return {
+        queue,
+        add,
+        peek,
+        remove,
+        isEmpty,
+    }
+};
+
+const queue = new Queue()
+queue.add(1)
+queue.add(2)
+queue.add(3)
+console.log(queue)
+
+// Stack ============================
+
+function Stack() {
+    const stack = [];
+
+    function isEmpty() {
+        return stack.length === 0;
+    }
+
+    function peek() {
+        return stack[0] ? stack[0] : null
+    }
+
+	function push(data) {
+        stack.unshift(data)
+    }
+  
+    function pop() {   
+        return stack.length !== 0 ? stack.shift(stack[0]) : null;
+    }
+
+    return {
+        stack,
+        isEmpty,
+        peek,
+        push,
+        pop,
+    }
+};
+
+const stack = new Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+console.log(stack)
+
+</script>
+</body>
+</html>
